@@ -1,16 +1,47 @@
 <body>
   <h1>Feed Me My Snacks</h1>
-  <label for="age">Enter your age.</label>
-  <input type="text" id="age" name="age"><br><br>
-  <label for="maxAge">Enter the max age you would like.</label>
-  <input type="text" id="maxAge" name="maxAge"><br><br>
-  <label for="numPerDay">Enter how much of your favorite snack you consume in a day.</label>
-  <input type="text" id="numPerDay" name="numPerDay"><br><br>
-  <p> Result: </p>
-  <button type="button">Accept Input</button>
-  <script>
-let totalRequired = (numPerDay * 365) * (maxAge - age);
-    // document.write("You will need " + totalRequired + " cups of water needed to last you until the ripe old age of " + maxAge);
-    </script>
 
+  <label for="age">Enter your age
+  <input id="age" />
+  </label>
+  </br/>
+
+  <label for="maxAge">Enter the max age you would like
+  <input id="maxAge" />
+  </label>
+  </br/>
+
+  <label for="numPerDay">Enter how much of your favorite snack you consume in a day
+  <input id="numPerDay" />
+  </label>
+  </br/>
+
+  <label for="snack">What is your snack?
+    <input id="snack" />
+    </label>
+    </br/>
+
+  <p id = "result"> Result: </p>
+  <button onclick="getData()">Accept Input</button>
+
+  <script>
+    function getData() {
+      let Age = age.value;
+      let maxage = maxAge.value;
+      let numperday = numPerDay.value;
+      let snacks = snack.value;
+
+      if (confirm(`Are ${Age}, ${maxage}, ${numperday} and ${snacks} truly your inputs?`)) {
+        let totalRequired = (Number(numperday) * 365) * (Number(maxage) - Number(Age));
+      result.innerHTML = "Result: You will need " + totalRequired +  " " + snacks + " needed to last you until the ripe old age of " + maxage;
+      }
+      else {
+      window.alert("Run the code again.");
+      }
+    }
+    // document.write("You will need " + totalRequired + " cups of water needed to last you until the ripe old age of " + maxAge);
+        // onclick is an event handler/listener
+
+        //  let Age = document.getElementById("age").value can be let Age = age.value
+    </script>
     </body>
