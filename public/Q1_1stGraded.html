@@ -16,12 +16,12 @@
   </label>
   </br/>
 
-  <label for="snack">What is your snack?
+  <label for="snack">What is your snack? (Answer in plural terms.)
     <input id="snack" />
     </label>
     </br/>
 
-  <p id = "result"> Result: </p>
+  <p id = "result"> </p>
   <button onclick="getData()">Accept Input</button>
 
   <script>
@@ -33,7 +33,7 @@
 
       if (confirm(`Are ${Age}, ${maxage}, ${numperday} and ${snacks} truly your inputs?`)) {
         let totalRequired = (Number(numperday) * 365) * (Number(maxage) - Number(Age));
-      result.innerHTML = "Result: You will need " + totalRequired +  " " + snacks + " needed to last you until the ripe old age of " + maxage;
+      result.innerHTML = "<b>Result:</b> You will need <br/>" + totalRequired +  " " + snacks + " needed to last you until the ripe old age of " + maxage;
       }
       else {
       window.alert("Run the code again.");
