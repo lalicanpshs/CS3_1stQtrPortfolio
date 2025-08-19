@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 2nd Graded Exercise submitted by Sol Lalican of 9Beryllium</h2>
+
+  <label for="mp">Meal Price:
+  <input id="mp" />
+  </label>
+  </br/>
+
+  <label for="tip">Tip:
+  <input id="tip" />
+  </label>
+  </br/>
+
+  <label for="sc">Service Charge:
+  <input id="sc" />
+  </label>
+  </br/>    
+
+  <p id = "result"> </p>
+  <button onclick="totalMeal()">Accept Input</button>
+
+    <script>
+      function totalMeal() {
+        let Mp = mp.value;
+        let Sc = sc.value;
+        let Tip = tip.value;
+
+        if (confirm(`Are ${Mp}, ${Sc} and ${Tip} truly your inputs?`)) {
+        let totalCost = Number(Mp) + Number(Tip) + (Number(Sc) / 100 * Number(Mp));
+      result.innerHTML = "<b>Total Meal:</b>" + totalCost.toFixed(2);
+      }
+        else {
+      window.alert("Run the code again.");
+      }
+    }            
+    </script>
+
+</body>
+</html>
